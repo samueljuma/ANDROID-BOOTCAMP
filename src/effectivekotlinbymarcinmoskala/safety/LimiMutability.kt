@@ -23,11 +23,14 @@ class BankAccount{
 }
 
 fun threadExample(){
+    val lock = Any()
     var num = 0
     for(i in 1..1000){
         thread {
             Thread.sleep(10)
-            num +=1
+            synchronized(lock){
+                num +=1
+            }
         }
     }
     Thread.sleep(5000)
@@ -35,12 +38,16 @@ fun threadExample(){
 }
 
 suspend fun coroutineSample(){
+    val lock = Any()
     var num = 0
     coroutineScope {
         for (i in 1..1000) {
             launch {
                 delay(10)
-                num += 1
+                synchronized(lock){
+                    num += 1
+                }
+
             }
         }
     }
