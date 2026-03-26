@@ -1,5 +1,10 @@
 package effectivekotlinbymarcinmoskala.safety
 
+import kotlinx.coroutines.coroutineScope
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import kotlin.concurrent.thread
+
 class InsufficientBalance: Exception()
 
 class BankAccount{
@@ -17,11 +22,32 @@ class BankAccount{
     }
 }
 
-fun main(){
-    val account = BankAccount()
-    println(account.balance)
-    account.deposit(100.0)
-    println(account.balance)
-    account.withdraw(10.0)
-    println(account.balance)
+fun threadExample(){
+    var num = 0
+    for(i in 1..1000){
+        thread {
+            Thread.sleep(10)
+            num +=1
+        }
+    }
+    Thread.sleep(5000)
+    println(num)
+}
+
+suspend fun coroutineSample(){
+    var num = 0
+    coroutineScope {
+        for (i in 1..1000) {
+            launch {
+                delay(10)
+                num += 1
+            }
+        }
+    }
+    println(num)
+}
+
+suspend fun main(){
+    threadExample()
+    coroutineSample()
 }
