@@ -58,3 +58,41 @@ suspend fun main(){
     threadExample()
     coroutineSample()
 }
+
+class Sample{
+    val firstName: String? = "John"
+    val lastName: String? = "Doe"
+    val fullName: String?
+        get() = "$firstName  $lastName"
+    val fullName2: String? = firstName?.let { "$it $lastName" }
+    fun printName(){
+        if(fullName != null){
+//            print(fullName.length) // Error
+        }
+    }
+
+    fun printName2(){
+        if(fullName2 != null){
+//            print(fullName.length) // Error
+        }
+    }
+}
+
+
+
+data class Person(
+    val firstName: String,
+    val lastName: String
+){
+    val fullName
+        get() = "$firstName $lastName"
+    val fullName2 = "$firstName $lastName"
+}
+
+interface Element{
+    val text: String
+}
+
+class RealElement: Element{
+    override var text: String = "Real Element"
+}
