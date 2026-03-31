@@ -22,7 +22,6 @@ fun validBraces(braces: String): Boolean{
                     return false
                 }
             }
-
         }
     }
 
