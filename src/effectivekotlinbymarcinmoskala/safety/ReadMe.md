@@ -26,3 +26,6 @@ mutableList.add(5)
 ```
 
 - `Copy` comes in handy whe you want to mutate an immutable variable.
+
+### Platform type 
+- a type that comes from another language and has unknown nullability.
