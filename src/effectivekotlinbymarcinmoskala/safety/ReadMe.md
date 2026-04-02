@@ -51,9 +51,17 @@ mutableList.add(5)
 | `sealed`    | Restricted inheritance |
 | `interface` | Always open            |
 
+`note`
 > The general rule is that if we are not sure about the type, we should
 specify it. It is important information and we should not hide it
 Additionally for the sake of safety, in an external API, we should always specify
 types. We cannot let them be changed by accident. Inferred types
 can be too restrictive or can too easily change when our project
 evolves
+
+`note`
+>Always Prefer standard errors to custom ones
+
+`note`
+>We should prefer returning null or Failure when an error is expected, 
+and throwing an exception when an error is not expected

@@ -1,4 +1,4 @@
-package effectivekotlinbymarcinmoskala.safety;
+package effectivekotlinbymarcinmoskala.safety.java;
 
 
 public class JavaClass {

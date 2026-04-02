@@ -1,5 +1,7 @@
 package effectivekotlinbymarcinmoskala.safety
 
+import effectivekotlinbymarcinmoskala.safety.java.JavaClass
+
 fun platformType(){
     val value = JavaClass().value
     println(value.length) // NPE
