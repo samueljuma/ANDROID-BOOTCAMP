@@ -65,3 +65,28 @@ evolves
 `note`
 >We should prefer returning null or Failure when an error is expected, 
 and throwing an exception when an error is not expected
+
+> Handling all possibilities in a correct way - like here
+not using printer when it is null - is an implementation of 
+defensive programming. `Defensive programming` is a 
+blanket term for various practices increasing
+code stability once the code is in production, often
+by defending against the currently impossible. It is
+the best way when there is a correct way to handle
+all possible situations. It wouldn’t be correct if we
+would expect that printer is not null and should be
+used. In such a case it would be impossible to handle
+such a situation safely, and we should instead use
+a technique called `offensive programming`. The idea
+behind offensive programming is that in case of an
+unexpected situation we complain about it loudly to
+inform the developer who led to such situation, and to
+force him or her to correct it. A direct implementation
+of this idea is require, check and assert presented
+in Item 5: Specify your expectations on arguments and
+state. It is important to understand that even though
+those two modes seem like being in conflict, they are
+not at all. They are more like yin and yang. Those are
+different modes both needed in our programs for the
+sake of safety, and we need to understand them both
+and use them appropriately.
