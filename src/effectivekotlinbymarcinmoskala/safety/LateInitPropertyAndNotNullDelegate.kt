@@ -1,11 +1,11 @@
-package effectivekotlinbymarcinmoskala.safety.java
+package effectivekotlinbymarcinmoskala.safety
 
 import org.junit.jupiter.api.AfterEach
 import org.junit.jupiter.api.BeforeEach
 import org.junit.jupiter.api.Test
 import kotlin.properties.Delegates
 
-class User(val name: String)
+class UserDetail(val name: String)
 
 /**
  * It is not uncommon in projects to have properties that cannot be
@@ -21,12 +21,12 @@ class User(val name: String)
  */
 class RepositoryTest{
 
-    private lateinit var user: User
+    private lateinit var user: UserDetail
     private var randomAge by Delegates.notNull<Int>()
 
     @BeforeEach
     fun doThis(){
-        user = User("Sammy Juma")
+        user = UserDetail("Sammy Juma")
         randomAge = 18
     }
 
@@ -42,7 +42,7 @@ class RepositoryTest{
 
     @AfterEach
     fun cleanTests(){
-        user = User("John Doe")
+        user = UserDetail("John Doe")
     }
 }
 

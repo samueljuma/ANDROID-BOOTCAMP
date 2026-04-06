@@ -51,7 +51,5 @@ fun isPalindromeString(x: String): Boolean {
     // Edge cases
     if(x.isBlank() || x.length == 1) return true
 
-
-
     return false
 }

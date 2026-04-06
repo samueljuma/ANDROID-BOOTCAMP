@@ -90,3 +90,9 @@ not at all. They are more like yin and yang. Those are
 different modes both needed in our programs for the
 sake of safety, and we need to understand them both
 and use them appropriately.
+
+`note`
+> Operate on objects implementing Closeable or AutoCloseable
+using `use`. It is a safe and easy option. When you need to operate
+on a file, consider useLines that produces a sequence to iterate
+over the next lines.
